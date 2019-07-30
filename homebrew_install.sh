@@ -36,7 +36,6 @@ formulas=(
     lua
     mysql
     postgresql
-    ricty
     sqlite
     composer
     markdown
@@ -48,12 +47,13 @@ formulas=(
 )
 
 echo "brew tap..."
-brew tap sanemat/font
 
 echo "start brew install apps..."
 for formula in "${formulas[@]}"; do
     brew install $formula || brew upgrade $formula
 done
+
+brew tap homebrew/cask-fonts
 
 casks=(
     google-chrome
@@ -67,6 +67,7 @@ casks=(
     virtualbox
     vagrant
     vagrant-manager
+    font-ricty-diminished
 )
 
 echo "start brew cask install apps..."
