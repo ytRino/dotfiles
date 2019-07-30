@@ -20,9 +20,9 @@ formulas=(
     tree
     openssl
     tmux
+    reattach-to-user-namespace
     z
     colordiff
-    "--without-etcdir zsh"
     zsh-completions
     "--with-cocoa --srgb emacs"
     cask
@@ -34,7 +34,6 @@ formulas=(
     ansible
     python3
     lua
-    "vim --with-lua"
     mysql
     postgresql
     ricty
@@ -49,10 +48,6 @@ formulas=(
 )
 
 echo "brew tap..."
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew tap homebrew/apache
 brew tap sanemat/font
 
 echo "start brew install apps..."
@@ -64,6 +59,8 @@ casks=(
     google-chrome
     google-japanese-ime
     slack
+    java
+    android-studio
     libreoffice
     vlc
     atom
