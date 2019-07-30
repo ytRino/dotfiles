@@ -60,7 +60,10 @@ casks=(
     google-japanese-ime
     slack
     java
+    adoptopenjdk8
+    android-sdk
     android-studio
+    charles
     libreoffice
     vlc
     atom
