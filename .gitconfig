@@ -17,7 +17,9 @@
 [alias]
 	co = checkout
 	b = branch
-	s = status
+	br = switch -c # create branch 
+	s = switch
+	ss = status
 	st = status
 	ss = status -s
 	
