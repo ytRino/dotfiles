@@ -10,6 +10,8 @@ export LANG=ja_JP.UTF-8
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
 # 色を使用出来るようにする
 autoload -Uz colors

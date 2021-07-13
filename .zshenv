@@ -5,8 +5,11 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
-export JAVA8_HOME=`/usr/libexec/java_home -v 1.8`
+# export JAVA_HOME=`jenv global 1.8`
+# export JAVA8_HOME=`jenv gloval -v 1.8`
+# jenv enable-plugin export
+/usr/local/bin/jenv global 1.8
+
 # Android
 export ANDROID_HOME=/usr/local/share/android-sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/26.0.0:$PATH
