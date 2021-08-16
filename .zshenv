@@ -5,10 +5,11 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
-# export JAVA_HOME=`jenv global 1.8`
-# export JAVA8_HOME=`jenv gloval -v 1.8`
-# jenv enable-plugin export
-/usr/local/bin/jenv global 1.8
+export JAVA_HOME="/Users/hatena/.jenv/versions/11/"
+export JAVA8_HOME="$(jenv prefix 1.8)/bin"
+jenv disable-plugin export
+jenv enable-plugin export
+/usr/local/bin/jenv global 11
 
 # Android
 export ANDROID_HOME=/usr/local/share/android-sdk
