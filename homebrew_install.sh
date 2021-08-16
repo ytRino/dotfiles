@@ -44,6 +44,9 @@ formulas=(
     mecab
     diff-so-fancy
     thefuck
+    jenv
+    rbenv
+    xcodegen
 )
 
 echo "brew tap..."
