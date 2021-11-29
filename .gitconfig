@@ -100,3 +100,5 @@
 	diff = diff-highlight | less
 [diff]
 	compactionHeuristic = true
+[http]
+	cookiefile = /Users/ytrino/.gitcookies

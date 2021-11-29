@@ -5,7 +5,7 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
-export JAVA_HOME="/Users/hatena/.jenv/versions/11/"
+export JAVA_HOME="$(jenv prefix 11)"
 export JAVA8_HOME="$(jenv prefix 1.8)/bin"
 jenv disable-plugin export
 jenv enable-plugin export

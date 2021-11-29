@@ -187,6 +187,11 @@ function peco-git-branch(){
 }
 alias -g B='$(peco-git-branch)'
 
+## brew-file
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
 ## 'cd R' to git root
 alias -g R='$(git rev-parse --show-toplevel)'
 
