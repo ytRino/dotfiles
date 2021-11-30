@@ -5,15 +5,12 @@ export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # Java
 # export JAVA_HOME=`/usr/libexec/java_home -v 1.7.0_21`
-export JAVA_HOME="$(jenv prefix 11)"
-export JAVA8_HOME="$(jenv prefix 1.8)/bin"
-jenv disable-plugin export
-jenv enable-plugin export
-/usr/local/bin/jenv global 11
+export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+export PATH=$JAVA_HOME/bin:$PATH
 
 # Android
-export ANDROID_HOME=/usr/local/share/android-sdk
-export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/26.0.0:$PATH
+export ANDROID_HOME=/Users/ytrino/Library/Android/sdk
+export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/31.0.0:$PATH
 export ADBHOST=10.0.1.12
 
 # Virtualenvwrapper

@@ -10,9 +10,6 @@ export LANG=ja_JP.UTF-8
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
@@ -45,11 +42,13 @@ zstyle ':zle:*' word-style unspecified
 # 補完
 
 # for zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # 補完機能を有効にする
-autoload -Uz compinit
-compinit -u
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -59,7 +58,8 @@ zstyle ':completion:*' ignore-parents parent pwd ..
 
 # sudo の後ろでコマンド名を補完する
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
-                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+                   /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin \
+                   /opt/homebrew/bin
 
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
@@ -72,7 +72,7 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
 zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
 # vcs_infoでgitを明示的に指定(hubに置き換えられないようにする)
-zstyle ':vcs_info:git:*:-all-' command /usr/local/bin/git
+zstyle ':vcs_info:git:*:-all-' command /opt/homebrew/bin/git
 precmd () {
     psvar=()
     LANG=en_US.UTF-8 vcs_info
@@ -224,3 +224,7 @@ case ${OSTYPE} in
 esac
 
 # vim:set ft=zsh:
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
