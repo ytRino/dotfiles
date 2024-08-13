@@ -102,3 +102,5 @@
 	compactionHeuristic = true
 [http]
 	cookiefile = /Users/ytrino/.gitcookies
+[init]
+	defaultBranch = main
