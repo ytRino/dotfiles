@@ -10,6 +10,9 @@ export LANG=ja_JP.UTF-8
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
+# git-wt
+eval "$(git wt --init zsh)"
+
 # 色を使用出来るようにする
 autoload -Uz colors
 colors
